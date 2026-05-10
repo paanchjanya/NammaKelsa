@@ -1,0 +1,95 @@
+<resources>
+    <string name="app_name">NammaKelsa</string>
+    <string name="nav_find_work">Find Work</string>
+    <string name="nav_search">Search</string>
+    <string name="nav_ai">AI Suggester</string>
+    <string name="nav_profile">Profile</string>
+
+    <!-- Toast and Messages -->
+    <string name="msg_thinking">Thinking...</string>
+    <string name="msg_suggested_skill">Suggested: %1$s</string>
+    <string name="msg_suggested_skill_set">Skill set to %1$s based on your description!</string>
+    <string name="msg_welcome_complete_profile">Welcome! Please complete your profile.</string>
+    <string name="msg_location_unavailable_no_gps">Location not available — profile saved without GPS</string>
+    <string name="msg_getting_location">Getting your location...</string>
+    <string name="msg_fill_all_fields">Please fill all fields</string>
+    <string name="msg_fill_fields_select_skill">Please fill all fields and select a skill</string>
+    <string name="msg_fill_name_select_skill_first">Please fill name and select a skill first</string>
+    <string name="msg_saving">Saving...</string>
+    <string name="msg_profile_saved">Profile saved!</string>
+    <string name="msg_save_failed">Save failed: %1$s</string>
+    <string name="msg_photo_upload_failed">Photo upload failed: %1$s</string>
+    <string name="msg_no_phone">No phone number available</string>
+    <string name="msg_password_too_short">Password must be at least 6 characters</string>
+    <string name="msg_login_failed">Login failed: %1$s</string>
+    <string name="msg_registration_failed">Registration failed: %1$s</string>
+    <string name="msg_online">🟢 You are Online</string>
+    <string name="msg_offline">⚫ You are Offline</string>
+    <string name="msg_visible_to_customers">You are now visible to customers!</string>
+    <string name="msg_hidden_from_search">You are now hidden from search</string>
+    <string name="msg_availability_update_failed">Failed to update availability</string>
+    <string name="msg_no_workers_available">No workers available</string>
+    <string name="msg_result_count">%1$d worker(s) · %2$s · %3$s</string>
+    <string name="msg_generating_bio">✨ Generating your bio...</string>
+    <string name="msg_distance_unavailable_no_location">Distance filter unavailable without location</string>
+
+    <!-- Buttons and UI -->
+    <string name="btn_suggest">Suggest</string>
+    <string name="btn_save_profile">Save Profile</string>
+    <string name="btn_generate">Generate</string>
+    <string name="loading_indicator">...</string>
+    <string name="error_empty_description">Please describe your work first</string>
+    <string name="skill_all">All</string>
+    <string name="distance_any">Any</string>
+    <string name="distance_unit_km">%1$s km</string>
+    <string name="worker_rate_format">₹%1$d/day</string>
+    <string name="location_format">📍 %1$s</string>
+    <string name="title_find_worker">Find a Worker</string>
+    <string name="hint_search_worker">Search skill or area...</string>
+    <string name="msg_try_expanding_search">Try expanding your search distance or changing filters.</string>
+    <string name="title_ai_skill_suggester">AI Skill Suggester</string>
+    <string name="title_ai_skill_suggester_with_emoji">🤖 AI Skill Suggester</string>
+    <string name="label_describe_work">Describe your work...</string>
+    <string name="hint_ai_description">I help fix leaks, install pipes...</string>
+    <string name="label_why_ai">Why use AI?</string>
+    <string name="label_instant_tagging">Instant Tagging</string>
+    <string name="desc_instant_tagging">AI analyses your experience to find the perfect professional category instantly.</string>
+    <string name="label_better_matches">Better Matches</string>
+    <string name="desc_better_matches">Accurate skill tagging increases your profile visibility to the right clients.</string>
+
+    <!-- Login & Register -->
+    <string name="title_login_welcome">Welcome back</string>
+    <string name="subtitle_login">Sign in to your worker account</string>
+    <string name="label_email">EMAIL</string>
+    <string name="label_password">PASSWORD</string>
+    <string name="hint_email">name@example.com</string>
+    <string name="hint_password">Enter your password</string>
+    <string name="btn_sign_in">Sign In</string>
+    <string name="btn_forgot_password">Forgot Password?</string>
+    <string name="label_new_worker">New worker? </string>
+    <string name="btn_create_account_link">Create account →</string>
+    <string name="title_create_account">Create Worker Account</string>
+    <string name="hint_full_name">Full Name</string>
+    <string name="hint_phone">Phone Number</string>
+    <string name="hint_email_register">Email</string>
+    <string name="hint_password_register">Password</string>
+    <string name="btn_create_account">Create Account</string>
+
+    <!-- Profile -->
+    <string name="title_profile">My Profile</string>
+    <string name="label_logout">Logout</string>
+    <string name="label_profile_photo">Profile Photo</string>
+    <string name="btn_pick_photo">Pick Photo</string>
+    <string name="hint_daily_rate">Daily Rate (₹)</string>
+    <string name="hint_locality">Your Area / Locality</string>
+    <string name="hint_work_description_ai">Describe your work (e.g. I fix water pipes and taps)</string>
+    <string name="msg_suggested_skill_placeholder">Suggested skill will appear here</string>
+    <string name="label_select_skill">Select Your Skill</string>
+    <string name="label_work_gallery">Work Gallery (up to 3 photos)</string>
+    <string name="btn_pick_work_photos">Pick Work Photos</string>
+    <string name="title_ai_worker_bio">✨ AI Worker Bio</string>
+    <string name="msg_ai_bio_placeholder">Tap Generate to create an AI bio in English and Kannada...</string>
+    <string name="label_available_today">Available for Work Today</string>
+    <string name="status_offline">You are currently Offline</string>
+    <string name="status_online">You are currently Online</string>
+</resources>
