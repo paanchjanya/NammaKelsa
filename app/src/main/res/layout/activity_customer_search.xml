@@ -62,12 +62,18 @@
                 android:textSize="16sp"
                 android:layout_marginEnd="8dp"/>
 
-            <TextView
-                android:layout_width="wrap_content"
+            <EditText
+                android:id="@+id/etSearch"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/hint_search_worker"
+                android:hint="@string/hint_search_worker"
                 android:textSize="14sp"
-                android:textColor="#BBBBBB"/>
+                android:textColor="#1A1A1A"
+                android:textColorHint="#BBBBBB"
+                android:background="@android:color/transparent"
+                android:inputType="text"
+                android:maxLines="1"
+                android:imeOptions="actionSearch"/>
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>

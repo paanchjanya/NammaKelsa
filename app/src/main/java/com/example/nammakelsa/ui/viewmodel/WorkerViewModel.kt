@@ -24,8 +24,13 @@ class WorkerViewModel : ViewModel() {
     private val _workerDistances = MutableStateFlow<Map<String, Double?>>(emptyMap())
     val workerDistances = _workerDistances.asStateFlow()
 
-    private var selectedSkill: String? = null
-    private var selectedMaxDistance: Double = Double.MAX_VALUE
+    private val _selectedSkill = MutableStateFlow<String?>(null)
+    val selectedSkill = _selectedSkill.asStateFlow()
+
+    private val _selectedMaxDistance = MutableStateFlow(Double.MAX_VALUE)
+    val selectedMaxDistance = _selectedMaxDistance.asStateFlow()
+
+    private var searchQuery: String = ""
     private var customerLat: Double = 0.0
     private var customerLng: Double = 0.0
     private var locationAvailable: Boolean = false
@@ -60,12 +65,17 @@ class WorkerViewModel : ViewModel() {
     }
 
     fun setSkillFilter(skill: String?) {
-        selectedSkill = skill
+        _selectedSkill.value = skill
         applyFilters()
     }
 
     fun setDistanceFilter(maxDistance: Double) {
-        selectedMaxDistance = maxDistance
+        _selectedMaxDistance.value = maxDistance
+        applyFilters()
+    }
+
+    fun setSearchQuery(query: String) {
+        searchQuery = query
         applyFilters()
     }
 
@@ -74,17 +84,22 @@ class WorkerViewModel : ViewModel() {
             val allWorkers = _availableWorkers.value
             
             val filtered = allWorkers.filter { worker ->
-                val matchesSkill = selectedSkill == null || worker.skillType == selectedSkill
-                val matchesDistance = if (locationAvailable && selectedMaxDistance != Double.MAX_VALUE) {
+                val matchesSkill = _selectedSkill.value == null || worker.skillType == _selectedSkill.value
+                val matchesSearch = if (searchQuery.isNotEmpty()) {
+                    worker.name.contains(searchQuery, ignoreCase = true) ||
+                            worker.skillType.contains(searchQuery, ignoreCase = true) ||
+                            worker.locationName.contains(searchQuery, ignoreCase = true)
+                } else true
+                val matchesDistance = if (locationAvailable && _selectedMaxDistance.value != Double.MAX_VALUE) {
                     if (worker.latitude == 0.0 && worker.longitude == 0.0) false
                     else {
                         val dist = LocationHelper.distanceInKm(
                             customerLat, customerLng, worker.latitude, worker.longitude
                         )
-                        dist <= selectedMaxDistance
+                        dist <= _selectedMaxDistance.value
                     }
                 } else true
-                matchesSkill && matchesDistance
+                matchesSkill && matchesSearch && matchesDistance
             }.let { list ->
                 if (locationAvailable) {
                     list.sortedBy { worker ->
